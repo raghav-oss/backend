@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -10,10 +11,10 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const config = {
-  user: 'himanshu',
-  password: '130996',
-  server: 'SAP-3-156',
-  database: 'Orders_db',
+  user: process.env.user,
+  password: process.env.pass,
+  server: process.env.server,
+  database: process.env.db,
   options: {
     encrypt: false,
     trustServerCertificate: true, 
